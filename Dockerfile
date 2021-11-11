@@ -1,5 +1,5 @@
-FROM centos
-RUN yum install httpd python3 -y
+FROM alpine
+RUN apk add python3
 RUN pip3 install flask
 WORKDIR /app
 ADD . .
