@@ -35,8 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: build the docker image
-        run: docker build -t akashnaninanj/test .
+        run: docker build -t ${{secrets.DOCKER_USER_NAME}}/test .
       - name: login into docker account
         run: docker login --username=${{secrets.DOCKER_USER_NAME}} --password=${{secrets.DOCKER_PASSWORD}}
       - name: push to docker hub
-        run: docker push akashnaninanj/test
+        run: docker push ${{secrets.DOCKER_USER_NAME}}/test
